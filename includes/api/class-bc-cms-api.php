@@ -427,6 +427,13 @@ class BC_CMS_API extends BC_API {
 
 		}
 
+		/**
+		 * Allow filtering of the Brightcove video list arguments.
+		 *
+		 * @var array $args The Brightcove video list arguments.
+		 */
+		$args = apply_filters( 'brightcove_video_list_args', $args );
+
 		// rawurlencode will convert spaces to %20, which is required according to BC API Docs.
 		$args = array_map( 'rawurlencode', $args );
 		$url  = add_query_arg(
